@@ -19,30 +19,17 @@ import io.appium.java_client.android.options.UiAutomator2Options;
 
 public class CalculatorTest {
   AndroidDriver driver;
-  DesiredCapabilities capabilities;
   UiAutomator2Options options;
-
-  public void launchApp() throws InterruptedException, IOException {
-    ProcessBuilder pb = new ProcessBuilder(
-        "C:\\Windows\\System32\\cmd.exe",
-        "/c",
-        "adb.exe",
-        "shell", "am", "start",
-        "-n", "com.sec.android.app.popupcalculator/.Calculator");
-    Process pc = pb.start();
-    pc.waitFor();
-  }
 
   @BeforeTest
   public void setup() throws InterruptedException, IOException {
-    launchApp();
-
-    capabilities = new DesiredCapabilities();
-    capabilities.setCapability("platformName", "Android");
-    capabilities.setCapability("appium:deviceName", "RR8T90084BR");
-    capabilities.setCapability("appium:automationName", "UiAutomator2");
-
     options = new UiAutomator2Options();
+    options.setCapability("platformName", "Android");
+    options.setCapability("appium:deviceName", "RR8T90084BR");
+    options.setCapability("appium:automationName", "UiAutomator2");
+    options.setCapability("appium:appPackage", "com.sec.android.app.popupcalculator");
+    options.setCapability("appium:appActivity", "com.sec.android.app.popupcalculator.Calculator");
+
     driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
 
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
