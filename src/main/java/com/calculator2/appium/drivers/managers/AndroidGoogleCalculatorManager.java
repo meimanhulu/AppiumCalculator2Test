@@ -12,11 +12,13 @@ public class AndroidGoogleCalculatorManager {
   public static AndroidDriver make() throws MalformedURLException {
     UiAutomator2Options options = new UiAutomator2Options();
     options.setCapability("platformName", "Android");
-    options.setCapability("appium:deviceName", "RR8T90084BR");
+    options.setCapability("appium:deviceName", "98b46218");
     options.setCapability("appium:automationName", "UiAutomator2");
     options.setCapability("appium:appPackage", "com.google.android.calculator");
     options.setCapability("appium:appActivity", "com.android.calculator2.Calculator");
-
+    options.setCapability("appium:ignoreHiddenApiPolicyError","true");
+    options.setCapability("appium:noReset","true");
+    // options.setCapability("--session-override",true);
     AndroidDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
     return driver;
   }

@@ -17,11 +17,11 @@ public class CalculatorGoogleScreen {
   private AndroidDriver driver;
   private WebDriverWait wait;
 
-  private By buttonClear = AppiumBy.accessibilityId("clear");
+  private By buttonClear = AppiumBy.accessibilityId("kosongkan");
   private By buttonNine = AppiumBy.accessibilityId("9");
-  private By buttonPlus = AppiumBy.accessibilityId("plus");
+  private By buttonPlus = AppiumBy.accessibilityId("tambah");
   private By buttonFive = AppiumBy.accessibilityId("5");
-  private By buttonEqual = AppiumBy.accessibilityId("equals");
+  private By buttonEqual = AppiumBy.accessibilityId("sama dengan");
   private By textEdit = AppiumBy.id("com.google.android.calculator:id/result_final");
 
   public CalculatorGoogleScreen(AndroidDriver driver) {

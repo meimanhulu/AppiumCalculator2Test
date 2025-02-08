@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-02-08T16:36:43 WIB" name="Calculator Suite Test" finished-at="2025-02-08T16:37:02 WIB" duration-ms="19390">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.calculator2.appium.runners.RunnerTest@692f203f]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2025-02-08T16:36:43 WIB" name="Calculator Test" finished-at="2025-02-08T16:37:02 WIB" duration-ms="19390">
+      <class name="com.calculator2.appium.runners.RunnerTest">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.calculator2.appium.runners.RunnerTest@692f203f]" started-at="2025-02-08T16:36:43 WIB" name="setUpClass" finished-at="2025-02-08T16:36:54 WIB" duration-ms="11431" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@4b54af3d]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.calculator2.appium.runners.RunnerTest@692f203f]" started-at="2025-02-08T16:36:54 WIB" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-02-08T16:37:01 WIB" duration-ms="7199" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Hitung Penjumlahan Sederhana"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Calculator Realme"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.calculator2.appium.runners.RunnerTest@692f203f]" started-at="2025-02-08T16:37:01 WIB" name="tearDownClass" finished-at="2025-02-08T16:37:02 WIB" duration-ms="636" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- com.calculator2.appium.runners.RunnerTest -->
+    </test> <!-- Calculator Test -->
+  </suite> <!-- Calculator Suite Test -->
+</testng-results>
