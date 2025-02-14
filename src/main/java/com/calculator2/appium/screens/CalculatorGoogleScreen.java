@@ -18,9 +18,7 @@ public class CalculatorGoogleScreen {
   private WebDriverWait wait;
 
   private By buttonClear = AppiumBy.accessibilityId("kosongkan");
-  private By buttonNine = AppiumBy.accessibilityId("9");
   private By buttonPlus = AppiumBy.accessibilityId("tambah");
-  private By buttonFive = AppiumBy.accessibilityId("5");
   private By buttonEqual = AppiumBy.accessibilityId("sama dengan");
   private By textEdit = AppiumBy.id("com.google.android.calculator:id/result_final");
 
@@ -38,43 +36,57 @@ public class CalculatorGoogleScreen {
     element.click();
   }
 
-  public void clickFive() {
-    WebElement element = wait.until(
-      ExpectedConditions.visibilityOfElementLocated(buttonFive)
-    );
+  public void firstNumber(String firstValue){
+    if (firstValue.matches(".*[^0-9].*")) { 
+        throw new IllegalArgumentException("First value contains non-digit characters.");
+    }
+    char[] keyPad = firstValue.toCharArray();
+    for (char c : keyPad) {
+        String selectorNumber1 = "com.google.android.calculator:id/digit_"+c;
+        By number1 = AppiumBy.id(selectorNumber1);
+        WebElement element = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(number1)
+        );
+        element.click();
+    }
+}
 
-    element.click();
+public void secondNumber(String secondValue){
+  if (secondValue.matches(".*[^0-9].*")) { 
+      throw new IllegalArgumentException("Second value contains non-digit characters.");
   }
-
-  public void clickPlus() {
-    WebElement element = wait.until(
-      ExpectedConditions.visibilityOfElementLocated(buttonPlus)
-    );
-
-    element.click();
+  char[] keyPad = secondValue.toCharArray();
+  for (char c : keyPad) {
+      String selectorNumber2 = "com.google.android.calculator:id/digit_"+c;
+      By number1 = AppiumBy.id(selectorNumber2);
+      WebElement element = wait.until(
+              ExpectedConditions.visibilityOfElementLocated(number1)
+      );
+      element.click();
   }
+}
 
-  public void clickNine() {
-    WebElement element = wait.until(
-      ExpectedConditions.visibilityOfElementLocated(buttonNine)
-    );
+public void clickPlus() {
+  WebElement element = wait.until(
+          ExpectedConditions.visibilityOfElementLocated(buttonPlus)
+  );
 
-    element.click();
-  }
+  element.click();
+}
 
-  public void clickEqual() {
-    WebElement element = wait.until(
-      ExpectedConditions.visibilityOfElementLocated(buttonEqual)
-    );
+public void clickEqual() {
+  WebElement element = wait.until(
+          ExpectedConditions.visibilityOfElementLocated(buttonEqual)
+  );
 
-    element.click();
-  }
+  element.click();
+}
 
-  public String getResult() {
-    WebElement element = wait.until(
-      ExpectedConditions.visibilityOfElementLocated(textEdit)
-    );
+public String getResult() {
+  WebElement element = wait.until(
+          ExpectedConditions.visibilityOfElementLocated(textEdit)
+  );
 
-    return element.getText();
-  }
+  return element.getText();
+}
 }
